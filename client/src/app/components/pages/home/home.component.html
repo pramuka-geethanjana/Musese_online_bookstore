@@ -1,0 +1,11 @@
+<h1>Browse Your Favourite</h1>
+<h3>From Book Store</h3>
+
+<div class="container">
+  <app-book-slider *ngIf="mostPurchasedBooks" categoryName="Most Purchased Books"
+    [Books]="mostPurchasedBooks"></app-book-slider>
+
+  <app-book-slider *ngIf="bestRatedBooks" categoryName="Best Rated Books" [Books]="bestRatedBooks"></app-book-slider>
+  <app-book-slider *ngIf="newestBooks" categoryName="Newest Books" [Books]="newestBooks"></app-book-slider>
+
+</div>

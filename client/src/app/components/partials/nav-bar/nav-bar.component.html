@@ -1,0 +1,30 @@
+<nav class="topnav">
+  <a routerLink="/home">Home</a>
+  <a routerLink="/book/store/default"> Book Store</a>
+  <a routerLink="/contact">Contact us</a>
+
+  <ng-template [ngIf]="isUserLogged()">
+    <a (click)="naviageToProfile()">My Profile</a>
+    <a routerLink="/user/purchaseHistory">My Purchase History</a>
+    <a *ngIf="isUserAdmin()" routerLink="/book/add">Create Book</a>
+    <a *ngIf="isUserAdmin()" routerLink="/view_contact">View Message</a>
+
+  </ng-template>
+
+  <div>
+    <ng-template [ngIf]="!isUserLogged()">
+      <a class="menu-item-right" routerLink="/user/register">Register</a>
+      <a class="menu-item-right" routerLink="/user/login">Login</a>
+    </ng-template>
+    <ng-template [ngIf]="isUserLogged()">
+      <a class="menu-item-right" routerLink="/home" (click)="logout()">
+        {{getUsername()}}
+        <span class="user-name">Hello, {{username}}</span> <span class="logout-name"> Logout</span>
+      </a>
+
+    </ng-template>
+    <ng-template [ngIf]="isUserLogged() && this.cartItems > 0">
+      <a class="menu-item-right" routerLink="/cart">Cart ({{cartItems}})</a>
+    </ng-template>
+  </div>
+</nav>

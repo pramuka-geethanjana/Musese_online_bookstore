@@ -1,0 +1,14 @@
+<section class="books-section">
+  <h1 class="heading"> <span>{{categoryName}}</span></h1>
+
+  <div class="swiper books-slider">
+
+    <div *ngIf="Books" class="swiper-wrapper">
+
+      <app-book *ngFor="let book of Books" [book]="book"></app-book>
+
+    </div>
+
+  </div>
+
+</section>

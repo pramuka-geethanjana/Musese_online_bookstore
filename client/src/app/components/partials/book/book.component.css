@@ -1,0 +1,136 @@
+.box {
+  width: 18rem;
+  height: auto;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  border: .01rem solid rgba(0, 0, 0, .1);
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.box:hover {
+  border: 0.1rem solid #2f2f2f;
+  cursor: pointer;
+}
+
+.box .image {
+  padding: 1rem;
+  background: linear-gradient(15deg, #eee 30%, #fff 30.1%);
+}
+
+.box .image img {
+  height: 15rem;
+}
+
+.box .icons {
+  border-bottom: .2rem solid #2f2f2f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 1;
+  transform: translateY(-100%);
+}
+
+.box:hover .icons {
+  transform: translateY(0%);
+}
+
+
+.box:hover .image {
+  transform: translateY(0.6rem);
+}
+
+.box .icons img {
+  color: #111111;
+  height: 2rem;
+  width: 2rem;
+  padding: .2rem .1rem;
+  margin-left: 1.5rem;
+  margin-top: .5rem;
+}
+
+.box .icons img:hover {
+  background: #d88c08;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  transform: scale(1.4);
+}
+
+.box .content {
+  background: #eee;
+  padding: .5rem;
+}
+
+.box .content h3 {
+  font-size: 1rem;
+}
+
+.box .content h6 {
+  font-size: .8rem;
+}
+
+.box .content p {
+  color: #ff2525;
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.box .content p span {
+  color: #2f2f2f;
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+/* CSS */
+.button-3 {
+  appearance: none;
+  background-color: #e99300;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-bottom: .5rem;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #ffa914;
+}
+
+
+.button-3:active {
+  background-color: #d88c08;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}

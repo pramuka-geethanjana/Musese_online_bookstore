@@ -1,0 +1,52 @@
+<header class="header">
+  <div class="header-1">
+
+    <a href="#" class="logo">
+
+      <img src="../../../../assets/icons/book.svg" alt="book-icon">
+
+      <span class="logo-name">Muses Online BookStore</span>
+
+    </a>
+
+    <div class="search-form">
+      <form #formDir="ngForm" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <input type="text" name="query" placeholder="Search Books,Author..." formControlName="query" />
+        <button type="submit" [disabled]="searchForm.invalid">
+          <img class="search-icon" src="../../../../assets/icons/search-white.svg" alt="search-icon">
+        </button>
+      </form>
+    </div>
+
+    <div class="icons">
+      <ng-template [ngIf]="isUserLogged()">
+
+        <a class="heart-icon" (click)="naviageToProfile()">
+          <img src="../../../../assets/icons/heart.svg" alt="heart-icon">
+          <span class="favoriteBooksCouunt">{{favoriteBooks}} </span>
+
+        </a>
+        <a class="cart-icon" (click)="naviageToCart()">
+          <img src="../../../../assets/icons/shppingBag.svg" alt="cart-icon">
+          <span class="cartItemsCount">{{cartItems}} </span>
+
+        </a>
+
+      </ng-template>
+
+      <ng-template [ngIf]="!isUserLogged()">
+        <a href="#" class="user-icon">
+          <img src="../../../../assets/icons/user.svg" alt="user-icon">
+        </a>
+      </ng-template>
+
+      <ng-template [ngIf]="isUserLogged()">
+        <span class="user-profile" (click)="naviageToProfile()">
+          <img src="{{imageUrl}}" alt="imgaeUrl">
+        </span>
+      </ng-template>
+
+    </div>
+
+  </div>
+</header>

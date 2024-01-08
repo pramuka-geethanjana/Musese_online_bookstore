@@ -1,0 +1,96 @@
+<h1>Your Purchase Histroy</h1>
+
+<div id="top">
+  <div class="info">
+    <h2>Contact Info</h2>
+    <p>
+
+      Email : {{user.email}}<br>
+
+    </p>
+  </div>
+</div>
+
+<div id="bottom" *ngIf="receipts">
+  <div id="table" *ngFor="let r of receipts; index as i">
+    <div class="receipt-no">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      Receipt {{i + 1}}
+      <div class="clearfix"></div>
+    </div>
+    <table>
+      <tr class="tabletitle">
+        <td class="image">
+          <h2>Book Image</h2>
+        </td>
+        <td class="item">
+          <h2>Title</h2>
+        </td>
+        <td class="Hours">
+          <h2>Author</h2>
+        </td>
+        <td class="Rate">
+          <h2>Price</h2>
+        </td>
+        <td class="Rate">
+          <h2>Quantity</h2>
+        </td>
+        <td class="Rate">
+          <h2>Sub Total</h2>
+        </td>
+      </tr>
+
+      <tr class="service" *ngFor="let b of r.productsInfo">
+        <td class="tableitem">
+          <img src="{{b.cover}}" alt="img" width="70" height="120">
+        </td>
+        <td class="tableitem">
+          <p class="itemtext">{{b.title}}</p>
+        </td>
+        <td class="tableitem">
+          <p class="itemtext">{{b.author}}</p>
+        </td>
+        <td class="tableitem">
+          <p class="itemtext">{{b.price |currency:"LKR "}}</p>
+        </td>
+        <td class="tableitem">
+          <p class="itemtext">{{b.qty}}</p>
+        </td>
+        <td class="tableitem">
+          <p class="itemtext">{{b.qty * b.price |currency:"LKR "}}</p>
+        </td>
+      </tr>
+
+
+      <tr class="tabletitle">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="Rate">
+          <h2>tax</h2>
+        </td>
+        <td class="payment">
+          <h2>LKR 419.25</h2>
+        </td>
+      </tr>
+
+      <tr class="tabletitle">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="Rate">
+          <h2>Total</h2>
+        </td>
+        <td class="payment">
+          <h2>{{r.totalPrice + 419.25 |currency:"LKR "}}</h2>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div *ngIf="!receipts || receipts.length === 0" class="no-receipts">
+    No receipts yet! You can visit the <a routerLink="/book/store/default">store</a> to buy your first book!
+  </div>

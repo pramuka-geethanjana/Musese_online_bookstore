@@ -1,0 +1,59 @@
+h1 {
+  color: #616161;
+  margin: 1rem 0 1rem 0.2rem;
+  font-size: 1.7rem;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 1rem;
+}
+
+.details {
+  width: 25rem;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+label {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  color: #5f5f5f;
+  font-size: 1rem;
+}
+
+.profile-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+
+}
+
+
+
+.select-image img {
+  color: grey;
+  height: 4rem;
+  width: 4rem;
+  font-size: 1rem;
+  border-radius: 10rem;
+  color: white;
+  opacity: 0.8;
+  outline: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}

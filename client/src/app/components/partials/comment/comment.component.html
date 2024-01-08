@@ -1,0 +1,68 @@
+<div class="comments ">
+  <div *ngIf="isLogged" class="top-section">
+    <h3 class="mb-2">Comments</h3>
+
+    <div class="row pt-2">
+      <div class="col-12">
+        <form [formGroup]="commentForm" (ngSubmit)="submit()" id="commentForm">
+          <textarea rows="4" cols="50" name="comment" form="commentForm" formControlName="comment"
+            placeholder="Enter Comment Here..">
+             </textarea>
+          <input type="submit" class="add-comment" name="add-comment"
+            [value]="isFromEdit ? 'Edit Comment' : 'Add Comment'" [disabled]="commentForm.invalid" />
+        </form>
+        <br>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="comment " *ngFor="let c of comments">
+    <!-- new comment -->
+    <div class="new_comment">
+
+
+      <ul class="user_comment">
+
+        <!-- current #{user} avatar -->
+        <div class="user-comment-top">
+          <img (click)="navigateToProfile(c.user.username)" class="user-avatar" src={{c.user.avatar}} alt="avatar"
+            style="height: 50px; width: 50px;" />
+
+
+          <div class="comment_body">
+            <p>{{c.comment}}</p>
+          </div>
+        </div>
+
+
+        <!-- comments toolbar -->
+        <div class="comment_toolbar">
+
+          <!-- inc. date and time -->
+          <div class="comment_details">
+            <ul>
+              <li><i class="fa fa-calendar"></i>{{c.creationDate|date }}</li>
+              <li><i class="fa fa-pencil"></i> <span class="user">{{c.user.username}}</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </ul>
+    </div>
+
+    <div class="comment-actions">
+      <button [hidden]="!isAdmin && c.user._id !== userId" type="button" class="btn-edit"
+        (click)="editComment( c._id,c.comment)">
+        <img src="../../../../assets/icons/edit.svg" alt="edit" />
+      </button>
+      <button [hidden]="!isAdmin && c.user._id !== userId" type="button" class="btn-delete"
+        (click)="removeComment( c._id,c.comment)"><img src="../../../../assets/icons/delete.svg" alt="delete" />
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

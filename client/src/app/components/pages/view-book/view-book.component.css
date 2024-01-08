@@ -1,0 +1,126 @@
+.book-details {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  align-items: center;
+}
+
+.book-details img {
+  border-radius: 1rem;
+  flex: 1 0;
+  object-fit: cover;
+  height: 35rem;
+  margin: 1rem;
+}
+
+.book-info {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  color: #000000;
+}
+
+.book-info a {
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.book-info button {
+  margin: 10px 10px 10px 0;
+}
+
+.book-description {
+  text-align: justify;
+}
+
+.book-details div {
+  margin: 50px auto;
+  text-align: left;
+}
+
+.checked {
+  color: orange;
+}
+
+#admin-panel {
+  margin-top: 1rem;
+}
+
+#admin-panel .btn-edit {
+  color: white;
+  background: #db8b02;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+}
+
+
+#admin-panel .btn-delete {
+  color: white;
+  background: #b60000;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.book-info .btn-buy {
+  color: white;
+  background: #02923e;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+.book-info .btn-fav {
+  color: white;
+  background: #013b6b;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+.btn-login {
+  color: white;
+  background: #db8b02;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+#admin-panel .btn-edit:hover,
+#admin-panel .btn-delete:hover,
+.book-info .btn-buy:hover,
+.book-info .btn-fav:hover,
+.btn-login:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-results img {
+  height: 15rem;
+  width: 15rem;
+}
+
+.no-results span {
+  color: #979797;
+  font-size: 2rem;
+  font-weight: 400;
+}

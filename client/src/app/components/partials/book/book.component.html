@@ -1,0 +1,27 @@
+<div class="swiper-slide box">
+  <div class="icons">
+    <img src="../../../../assets/icons/search-black.svg" alt="search-icon" (click)="handleClickSearch()">
+    <img src="../../../../assets/icons/heart.svg" alt="search-icon" (click)="handleClickfav(book._id)">
+    <img src="../../../../assets/icons/eye.svg" alt="search-icon" (click)="handleClickview(book._id)">
+  </div>
+
+  <div class="image">
+    <img src="{{book.cover}}" alt="book-cover">
+  </div>
+
+  <div class="content">
+    <h3>{{book.title}}</h3>
+    <h6>{{book.author}}</h6>
+    <p>{{book.price |currency:"LKR "}} <span>{{(book.price+100) |currency:"LKR "}}</span></p>
+
+    <div class="button-section">
+      <a routerLink="/book/view/{{book._id}}">
+        <button class="button-3">View Details</button>
+      </a>
+      <a>
+        <button class="button-3" (click)="addToCart(book._id)">Add to cart</button>
+      </a>
+    </div>
+  </div>
+
+</div>

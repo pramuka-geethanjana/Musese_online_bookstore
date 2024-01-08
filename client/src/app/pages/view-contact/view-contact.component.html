@@ -1,0 +1,16 @@
+<div class="message-container" *ngFor="let message of messages">
+    <div class="message-card">
+      <div class="message-header">
+        <h3 class="message-name">Name: {{ message.name }}</h3>
+      </div>
+      <p class="message-body">Message: {{ message.message }}</p>
+      <div class="message-footer">
+        <input class="email-input" [(ngModel)]="message.email" type="text" placeholder="Email">
+        <div class="message-actions">
+          <button class="action-button update-button" (click)="updateMessage(message._id, message.email)">Update</button>
+          <button class="action-button delete-button" (click)="deleteMessage(message._id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

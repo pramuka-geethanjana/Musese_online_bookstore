@@ -1,0 +1,46 @@
+<div *ngIf="book" class="book-details">
+  <div class="col-1">
+    <img src="{{book.cover}}" alt="book-cover" />
+  </div>
+  <div class=" book-info">
+    <h3>{{book.title}}</h3>
+
+    <app-star-rating [stars]="book.ratedCount/10" [size]="1.2" />
+
+    <p>based on {{book.ratedCount}} ratings</p>
+    <p><b>{{book.comments.length}}</b> comments</p>
+    <p><b> Author:</b> {{book.author}}</p>
+    <p><b>Genre:</b> {{book.genre}}</p>
+    <p><b>Relsease Year:</b> {{book.year}}</p>
+    <p><b>ISBN:</b> {{book.isbn}}</p>
+    <p><b>Pages:</b> {{book.pagesCount}}</p>
+    <p class="book-description"><b>Description:</b> {{book.description}}</p>
+    <h2><b>Price:</b> {{book.price | currency : "LKR "}}</h2>
+    <ng-template [ngIf]="isLogged">
+      <button class="btn-buy" (click)="buyBook()" [disabled]="isBought">Buy Book</button>
+      <button class="btn-fav" (click)="addToFavorites()" [disabled]="isAdded">Add to favourites</button>
+    </ng-template>
+
+    <ng-template [ngIf]="isAdmin">
+      <div id="admin-panel">
+        <a class="btn-edit" routerLink="/book/edit/{{book._id}}">Edit Book</a>
+        <a class="btn-delete" (click)="deleteBook(book._id)">Delete Book</a>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="!isLogged">
+      <button class="btn-login" (click)="login()">Login to Buy, Rate and Comment</button>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template [ngIf]="book">
+  <app-comment [bookId]="bookId" [isLogged]="isLogged" [isAdmin]="isAdmin" [userId]="userId"></app-comment>
+</ng-template>
+<ng-template [ngIf]="!book">
+  <div [hidden]="book" class="no-results">
+    <img src="../../../../assets//gifs//sadface.gif" alt="no-item-found">
+    <span>Sorry, We Couldn't Find Any Matches.</span>
+    <span>Please try angin.</span>
+
+  </div>
+</ng-template>

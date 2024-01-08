@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="details">
+    <h1>
+      Register
+    </h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <app-text-input [control]="formcontrol.username" [showErrorsWhen]="isSubmitted" label="UserName">
+        `</app-text-input>
+
+      <app-text-input [control]="formcontrol.email" [showErrorsWhen]="isSubmitted" label="Email" type="email">
+        `</app-text-input>
+
+      <app-text-input [control]="formcontrol.password" [showErrorsWhen]="isSubmitted" label="Password" type="password">
+        `</app-text-input>
+
+      <app-text-input [control]="formcontrol.confirmPassword" [showErrorsWhen]="isSubmitted" label="Confirm Password"
+        type="password">
+        `</app-text-input>
+
+
+      <div class="profile-image">
+        <label for="name">Profile Image</label>
+        <div class="select-image">
+          <input id="fileInput" type="file" accept="image/*" style="display: none;" (change)="onImageUpload($event)" />
+          <img *ngIf="!imageDisplay"
+            src="https://usuploads.s3.amazonaws.com/itlearn360/uploads/2018/12/dummy-profile-pic-300x300.jpg"
+            alt="imgaeUrl" (click)="selectOtherImage($event)">
+          <img *ngIf="imageDisplay" [src]="uploadedImageUrl" alt="imgaeUrl" (click)="selectOtherImage($event)">
+        </div>
+
+      </div>
+
+      <app-default-button text="Register"></app-default-button>
+
+      <div class="login">
+        Already a user? &nbsp;
+        <a routerLink="/user/login" [queryParams]="{ returnUrl: returnUrl }">
+          Login Here
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

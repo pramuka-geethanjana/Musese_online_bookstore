@@ -1,0 +1,71 @@
+<ng-template [ngIf]="isCartEmpty">
+  <div class="no-results">
+    <img src="../../../../assets/cartEmpty/empty_cart.png" alt="no-item-found">
+    <span>Cart is Empty.</span>
+    <span>Please add books to cart and visit angin.</span>
+
+  </div>
+</ng-template>
+
+<div class="main-container" *ngIf="cart.books.length>0">
+  <div class='cart-container'>
+    <form #formDir="ngForm" [formGroup]="cartForm">
+      <div class="header">
+        <h3 class="heading">Shopping Cart</h3>
+
+        <div class="top-btn">
+          <a routerLink="/book/store/default" class="btn-continue ">
+            Continue shopping
+          </a>
+        </div>
+        <h5 class="action">Remove all</h5>
+      </div>
+
+
+
+      <div class="cart-items" *ngFor="let b of cart.books">
+
+        <div class="image-box">
+          <img src="{{b.cover}}" alt="img" width="70" height="120" />
+        </div>
+        <div class="about">
+          <h1 class="title"> {{b.title}}</h1>
+          <h3 class="subtitle">{{b.author}}</h3>
+        </div>
+        <div class="quantity">
+
+          <div class="count">
+            <input class="qty" type="number" size="4" step="1" name="{{b._id}}" formControlName="{{b._id}}" />
+          </div>
+
+
+        </div>
+
+        <div class="prices">
+          <div class="amount">
+            {{b.price |currency :"LKR"}}
+          </div>
+          <div class="save" (click)="saveBook(b._id)">save</div>
+          <div class="remove" (click)="removeBook(b._id)">remove</div>
+
+        </div>
+
+      </div>
+      <div class="bottom" *ngIf="cart.books.length>0">
+        <hr>
+        <div class="checkout">
+          <div class="total">
+            <div class="sub-total">Sub Total</div>
+            <div class="items">{{cart.books.length}} Items</div>
+          </div>
+          <div class="total-amount">{{cart.totalPrice | currency : "LKR "}}</div>
+          <button class="button" type="submit" (click)="onSubmit()"> Checkout</button>
+        </div>
+      </div>
+
+
+    </form>
+
+  </div>
+
+</div>

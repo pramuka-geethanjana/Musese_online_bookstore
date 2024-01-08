@@ -1,0 +1,24 @@
+h1 {
+  color: #616161;
+  margin: 1rem 0 1rem 0.2rem;
+  font-size: 1.7rem;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 1rem;
+}
+
+.details {
+  width: 25rem;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

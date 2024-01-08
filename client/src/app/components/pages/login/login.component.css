@@ -1,0 +1,34 @@
+h1 {
+  color: #616161;
+  margin: 1rem 0 1rem 0.2rem;
+  font-size: 1.7rem;
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 0.5rem;
+}
+
+.details {
+  width: 28rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-list {
+  color: red;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

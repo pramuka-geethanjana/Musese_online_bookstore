@@ -1,0 +1,40 @@
+a img {
+  height: 1rem;
+  width: 1rem;
+}
+
+.books-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.books-section .heading {
+  text-align: center;
+  margin-bottom: .5rem;
+  position: relative;
+}
+
+.books-section .heading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: .01rem;
+  z-index: -1;
+}
+
+.heading span {
+  font-size: 1rem;
+  padding: .5rem 2rem;
+  color: #111111;
+  background: #fff;
+  border: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}

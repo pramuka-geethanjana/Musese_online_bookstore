@@ -1,0 +1,75 @@
+.top {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+#table {
+  margin-left: 2.2rem;
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  margin-top: .5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+td {
+  padding: 5px 0 5px 15px;
+  border: 1px solid #EEE
+}
+
+td p {
+  font-size: 1rem;
+}
+
+.tabletitle {
+  padding: 5px;
+  font-size: .5em;
+  background: #EEE;
+}
+
+.service {
+  border-bottom: 1px solid #EEE;
+}
+
+p {
+  font-size: .7em;
+  color: #666;
+  line-height: 1.2em;
+}
+
+.item {
+  width: 24mm;
+}
+
+.itemtext {
+  font-size: .5em;
+}
+
+
+h1 {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.no-receipts {
+  margin-bottom: 23.5em;
+}
+
+.no-receipts a {
+  font-size: 2rem;
+  color: #d88c08;
+}

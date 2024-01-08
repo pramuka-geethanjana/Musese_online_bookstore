@@ -1,0 +1,60 @@
+<div *ngIf="user" id="profile" class="row">
+  <h2 style="text-align:center">User Profile</h2>
+  <div class="top-section">
+
+    <div class="right-section">
+      <form [formGroup]="avatarForm">
+        <div class="card">
+          <input id="fileInput" type="file" accept="image/*" style="display: none;" (change)="onImageUpload($event)" />
+          <img *ngIf="imageDisplay" [src]="imageDisplay" alt="imgaeUrl" (click)="selectOtherImage($event)">
+          <img *ngIf="!imageDisplay" [src]="user.avatar" alt="profile" (click)="selectOtherImage($event)">
+          <h1>{{user.username}}</h1>
+          <p class="title">{{' '+ role }}</p>
+          <p class="comment-count">Comments: {{' '+user.commentsCount}}</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="left-section">
+      <div class="comments">
+        <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span>Latest comments by
+          {{user.username}}</h5>
+        <table class="comments-table" id="comments" *ngIf="comments && comments.length > 0">
+          <tbody>
+            <tr *ngFor="let c of comments">
+              <td>
+                {{c.comment | shortenString:100}} <a routerLink="/book/view/{{c.book._id}}">{{c.book.title}}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div [hidden]="user.commentsCount > 0">
+          No comments yet
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="user">
+  <h2>Favorite Books List</h2>
+  <div class="favorite-books">
+    <app-book *ngFor="let book of user.favoriteBooks" [book]="book"></app-book>
+
+  </div>
+  <div [hidden]="user.favoriteBooks.length > 0" class="no-favorite">
+    No books to the list yet
+  </div>
+
+</div>
+
+<ng-template [ngIf]="!user">
+  <div [hidden]="user" class="no-results">
+    <img src="../../../../assets//gifs//sadface.gif" alt="no-item-found">
+    <span>Sorry, We Couldn't Find Any Matches.</span>
+    <span>Please try angin.</span>
+
+  </div>
+</ng-template>

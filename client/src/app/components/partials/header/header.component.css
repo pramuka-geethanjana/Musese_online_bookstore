@@ -1,0 +1,146 @@
+.header .header-1 {
+  width: 100%;
+  background: #fff;
+  padding: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+a img {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-left: 1rem;
+}
+
+.logo-name {
+  margin-left: 5px;
+  font-size: 1.5rem;
+  color: var(--black-dark);
+}
+
+
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.icons .user-profile img {
+  color: grey;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1rem;
+  border-radius: 10rem;
+  color: white;
+  opacity: 0.8;
+  outline: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.icons .cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.icons .heart-icon {
+  position: relative;
+  cursor: pointer;
+
+}
+
+.icons .heart-icon .favoriteBooksCouunt {
+  position: absolute;
+  color: #fff;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: red;
+  border-radius: 10rem 10rem 10rem 10rem;
+  font-size: 1rem;
+  padding: 0.1rem;
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+.icons .cart-icon .cartItemsCount {
+  position: absolute;
+  color: #fff;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: red;
+  border-radius: 10rem 10rem 10rem 10rem;
+  font-size: 1rem;
+  padding: 0.1rem;
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.search-form input {
+  border-radius: 10rem 0 0 10rem;
+  border: none;
+  height: 3rem;
+  width: 20rem;
+  background-color: #f1f1f1;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+}
+
+.search-form button {
+  color: grey;
+  height: 3rem;
+  width: 5rem;
+  font-size: 1rem;
+  border-radius: 0 10rem 10rem 0;
+  border: none;
+  background-color: #ffb431;
+  color: white;
+  opacity: 0.8;
+  outline: none;
+}
+
+.search-form button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+button {
+  position: absolute;
+}
+
+button img {
+  height: 1.3rem;
+  width: 1.3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .header-1 .icons svg {
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="details">
+    <h1>
+      Edit Book
+    </h1>
+
+    <form [formGroup]="editBookForm" (ngSubmit)="submit()">
+      <app-text-input [control]="formcontrol.title" [showErrorsWhen]="isSubmitted" label="Title"> </app-text-input>
+
+      <app-text-input [control]="formcontrol.author" [showErrorsWhen]="isSubmitted" label="Author"> </app-text-input>
+
+      <app-text-input [control]="formcontrol.genre" [showErrorsWhen]="isSubmitted" label="Genre"> </app-text-input>
+
+      <app-text-input [control]="formcontrol.year" [showErrorsWhen]="isSubmitted" label="Year"> </app-text-input>
+
+      <app-text-input [control]="formcontrol.description" [showErrorsWhen]="isSubmitted" label="Description">
+      </app-text-input>
+
+      <app-text-input [control]="formcontrol.cover" [showErrorsWhen]="isSubmitted" label="Cover"> </app-text-input>
+
+      <app-text-input [control]="formcontrol.isbn" [showErrorsWhen]="isSubmitted" label="ISBN"> </app-text-input>
+      <app-text-input [control]="formcontrol.pagesCount" [showErrorsWhen]="isSubmitted" label="Pages Count">
+      </app-text-input>
+      <app-text-input [control]="formcontrol.price" [showErrorsWhen]="isSubmitted" label="Price"> </app-text-input>
+
+      <app-default-button text="Edit Book"></app-default-button>
+
+
+    </form>
+  </div>
+</div>
